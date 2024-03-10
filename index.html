@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uyo todo list 2</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo">
+            <h1>Task Tracker</h1>
+            <h3>What can we do to today?</h3>
+            <button id="panel">Show input Panel</button>
+            <div id="taskndate">
+                <label for="task">Task</label>
+                <input type="text" id="task">
+                <label for="Date">Date</label>
+                <input type="text" id="date">
+                <input type="checkbox" name="reminder" id="remind">
+                <label for="remind">Reminder</label>
+            </div>
+           <input type="button" value="Add Task" id="addtask">
+
+           <div class="tasklist">
+            <ul id="tasklist">
+                <li id="tlist">
+                    <div class="txt">
+                    <h3 id="nametask">fdfd</h3>
+                    <p id="datetask">sdfsd</p>
+                </div>
+                    <button id="delete"><img src="./delete.png" alt="" ></button>
+                </li>
+            </ul>
+           </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
