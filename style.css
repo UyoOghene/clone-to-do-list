@@ -21,11 +21,11 @@ body {
     background-color: blueviolet;
 }
 
-.taskndate ::after {
+.hidden {
     display: none;  
 }
 
-.taskndate ::before {
+.taskndate  {
     display: flex;  
     flex-direction: column;
 }

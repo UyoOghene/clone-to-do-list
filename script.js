@@ -14,12 +14,13 @@ const deletebtn =document.getElementById('deletebtn');
 addtask.addEventListener('click',addTask);
 
 inputPanel.addEventListener('click',hidePanel);
+deletebtn.addEventListener('click',deleteTask);
+
 
 function hidePanel(){
 
     inputPanel.innerHTML='hide input panel';
-    e.target.classList.toggle('taskndate');
-
+    taskNdate.classList.toggle('hidden');
 
 }
  
@@ -60,6 +61,7 @@ function addTask(){
         toDo.appendChild(node); 
 
 
+
     //    <div class="tasklist">
     //         <div class="txt">
     //             <h3 id="nametask">fdfd</h3>
@@ -74,20 +76,31 @@ function addTask(){
     //     li.innerHTML= datevalue;
     //     tlist.appendChild(li);
     }
+
     inputTask.value ='';
     inputDate.value ='';
-
-
-
+    saveData()
 
 }
 
 
-deletebtn.addEventListener('click',deleteTask);
 
 function deleteTask(){
 
     const tlist =document.querySelector('.tasklist');
-    tlist.remove();
+    tlist.style.display ='none';
+}
+
+
+function saveData(){
+    localStorage.setItem('data',taskvalue.innerHTML);
+    localStorage.setItem('data',datevalue.innerHTML);
 
 }
+
+function showTask(){
+taskvalue.innerHTML =localStorage.getItem('data');  
+datevalue.innerHTML =localStorage.getItem('data');  
+}
+
+showTask();
