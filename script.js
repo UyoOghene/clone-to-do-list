@@ -1,21 +1,25 @@
-const inputPanel =document.getElementById('panel');
+const inputPanel =document.querySelector('.panel');
 const inputTask =document.getElementById('task');
 const inputDate =document.getElementById('date');
 const addtask =document.getElementById('addtask');
-const taskNdate =document.getElementById('taskndate');
+const taskNdate =document.querySelector('.taskndate');
 const nametask =document.getElementById('nametask');
 const datetask =document.getElementById('datetask');
-const del =document.getElementById('delete');
 const toDo = document.querySelector('.todo');
+const deletebtn =document.getElementById('deletebtn');
+
 
 
 
 addtask.addEventListener('click',addTask);
+
 inputPanel.addEventListener('click',hidePanel);
 
 function hidePanel(){
-    taskNdate.remove();
+
     inputPanel.innerHTML='hide input panel';
+    e.target.classList.toggle('taskndate');
+
 
 }
  
@@ -48,14 +52,13 @@ function addTask(){
        node4.innerHTML = datevalue;
        node2.appendChild(node4);
        let node5 = document.createElement('button');
-       node5.setAttribute("id", "delete");
+       node5.setAttribute("id", "deletebtn");
        node5.innerHTML = 'delete';
        node.appendChild(node5);
 
 
-
-
         toDo.appendChild(node); 
+
 
     //    <div class="tasklist">
     //         <div class="txt">
@@ -74,12 +77,17 @@ function addTask(){
     inputTask.value ='';
     inputDate.value ='';
 
+
+
+
 }
 
-// del.addEventListener('click',deleteTask)
-// function deleteTask(){
-//     let tlist =document.getElementById('tlist');
-//     tlist.remove();
-    
-// }
 
+deletebtn.addEventListener('click',deleteTask);
+
+function deleteTask(){
+
+    const tlist =document.querySelector('.tasklist');
+    tlist.remove();
+
+}

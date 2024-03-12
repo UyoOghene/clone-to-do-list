@@ -15,6 +15,20 @@ body {
 
     
 }
+.panel {
+    border-radius: 20px;
+    padding: 10px;
+    background-color: blueviolet;
+}
+
+.taskndate ::after {
+    display: none;  
+}
+
+.taskndate ::before {
+    display: flex;  
+    flex-direction: column;
+}
 
 .todo{
     width: 30rem;
@@ -39,17 +53,7 @@ body {
 
 }
 
-#taskndate {
-    display:flex;
-    flex-direction: column;
-    width: 80%;
-}
 
-#panel {
-    border-radius: 20px;
-    padding: 10px;
-    background-color: blueviolet;
-}
 #addtask {
     border-radius: 20px;
     padding: 10px;
@@ -84,13 +88,13 @@ body {
 #nametask, #datetask {
     line-height: 2px;
 }
-#delete {
+#deletebtn {
     border-radius: 10px;
     border: none;
     cursor: pointer;
 }
 
-#delete:hover {
+#deletebtn:hover {
     border: 2px;
     background-color: #aa1f7a;
 }
