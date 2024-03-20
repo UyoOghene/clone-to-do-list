@@ -2,10 +2,13 @@ const inputPanel = document.querySelector('.panel');
 const inputTask = document.getElementById('task');
 const inputDate = document.getElementById('date');
 const addtask = document.getElementById('addtask');
-const taskNdate = document.querySelector('#taskndate');
+const taskNdate = document.querySelector('.show');
 const nametask = document.getElementById('nametask');
 const datetask = document.getElementById('datetask');
 const toDo = document.querySelector('.todo');
+let count = 0;
+localStorage.setItem('taskv', []);
+
 
 
 addtask.addEventListener('click', addTask);
@@ -13,17 +16,18 @@ addtask.addEventListener('click', addTask);
 inputPanel.addEventListener('click', hidePanel);
 
 function hidePanel(){
-    if( inputPanel.innerHTML === 'hide input panel'){
-        inputPanel.innerHTML='Show input Panel';
-        taskNdate.classList.toggle('hide');
-    }
-    else{
-        inputPanel.innerHTML === 'Show input Panel';
-        taskNdate.classList.toggle('hide');
+    taskNdate.classList.toggle('hide');
+        if(taskNdate.classList.contains('hide')){
+            inputPanel.innerHTML = 'show input panel';
+        }
+        else{
+            inputPanel.innerHTML = 'hide input panel';
+        }
     } 
-}
  
 function addTask(){
+    localStorage.setItem('taskv', inputTask.value);
+
     if(inputTask.value === ''){
     alert('write somehing');
     }
@@ -31,6 +35,7 @@ function addTask(){
         console.log(inputTask.value);
        let node = document.createElement('div');
        node.classList.add("tasklist");
+       node.setAttribute('id','tasklist' + count);
        let node2 = document.createElement('div');
        node2.classList.add("txt");
        node.appendChild(node2);
@@ -43,37 +48,43 @@ function addTask(){
        node4.innerHTML = inputDate.value;
        node2.appendChild(node4);
        let node5 = document.createElement('button');
-       node5.setAttribute("id", "deletebtn");
-    //    node5.addEventListener('click', delTask);
+       node5.setAttribute("id", "deletebtn" + count );
        node5.innerHTML = 'delete';
        node.appendChild(node5);
 
         toDo.appendChild(node); 
-        const deleteBtn = document.getElementById('deletebtn');
-        deleteBtn.addEventListener('click', delTask);
+        // const deleteBtn = document.getElementById('deletebtn');
+        node5.addEventListener('click', delTask);
     }
+
     inputTask.value ='';
     inputDate.value ='';
-    saveData();
+    // saveData();
+    count = count+1;
 }
 
 function delTask(){
-    console.log('hello');
+    console.log('deletefunction');
     const tlist = document.querySelector('.tasklist');
-    tlist.style.display ='none';
+    tlist.remove();
 }
 
 
 function saveData(){
-    localStorage.setItem('data', inputDate.value);
-    localStorage.setItem('data', inputTask.value);
-
-
+    // localStorage.setItem('taskv', inputTask.value);
+    // localStorage.setItem('datev', inputDate.value);
 }
 
 function showTask(){
-inputDate.value =localStorage.getItem('data');  
-inputTask.value =localStorage.getItem('data');  
+    // inputTask.value = localStorage.getItem('taskv');  
+    // inputDate.value = localStorage.getItem('datev');  
 }
 
 showTask();
+
+// localStorage.setItem("person", "{ name : 'uyo', age : 32}")
+// console.log(localStorage);
+
+let pers = localStorage.getItem('person');
+console.log(pers);
+
