@@ -6,8 +6,7 @@ const taskNdate = document.querySelector('.show');
 const nametask = document.getElementById('nametask');
 const datetask = document.getElementById('datetask');
 const toDo = document.querySelector('.todo');
-let count = 0;
-localStorage.setItem('taskv', []);
+const toDolist = document.querySelector('#todolist');
 
 
 
@@ -26,7 +25,6 @@ function hidePanel(){
     } 
  
 function addTask(){
-    localStorage.setItem('taskv', inputTask.value);
 
     if(inputTask.value === ''){
     alert('write somehing');
@@ -35,7 +33,7 @@ function addTask(){
         console.log(inputTask.value);
        let node = document.createElement('div');
        node.classList.add("tasklist");
-       node.setAttribute('id','tasklist' + count);
+       node.setAttribute('id','tasklist' );
        let node2 = document.createElement('div');
        node2.classList.add("txt");
        node.appendChild(node2);
@@ -48,43 +46,36 @@ function addTask(){
        node4.innerHTML = inputDate.value;
        node2.appendChild(node4);
        let node5 = document.createElement('button');
-       node5.setAttribute("id", "deletebtn" + count );
+       node5.setAttribute("id", "deletebtn" );
        node5.innerHTML = 'delete';
        node.appendChild(node5);
-
-        toDo.appendChild(node); 
-        // const deleteBtn = document.getElementById('deletebtn');
+        toDo.appendChild(toDolist); 
+        toDolist.appendChild(node);
         node5.addEventListener('click', delTask);
+
     }
 
     inputTask.value ='';
     inputDate.value ='';
-    // saveData();
-    count = count+1;
+    saveData();
+    
 }
 
 function delTask(){
     console.log('deletefunction');
     const tlist = document.querySelector('.tasklist');
     tlist.remove();
+    saveData();
 }
 
-
 function saveData(){
-    // localStorage.setItem('taskv', inputTask.value);
-    // localStorage.setItem('datev', inputDate.value);
+    localStorage.setItem('list', toDolist.innerHTML);
 }
 
 function showTask(){
-    // inputTask.value = localStorage.getItem('taskv');  
-    // inputDate.value = localStorage.getItem('datev');  
+    toDolist.innerHTML = localStorage.getItem('list');  
 }
 
 showTask();
 
-// localStorage.setItem("person", "{ name : 'uyo', age : 32}")
-// console.log(localStorage);
-
-let pers = localStorage.getItem('person');
-console.log(pers);
 

@@ -52,23 +52,15 @@ body {
     background-color: rgb(23, 165, 201);
 }
 
-.tasklist   {
-    display: flex;
-    height: fit-content;
-    width: 50%;
-    justify-content: space-between;
-    background-color: antiquewhite;
-}
 
-
-#tlist {
+/* #tlist {
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    background-color: aliceblue;
+    background-color: rgb(6, 62, 110);
     border-radius: 10px;
     width: 15rem;
-}
+} */
 .txt {
     width: 5rem;
     height: 3rem;
@@ -82,11 +74,12 @@ body {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    height: 100%;
 }
 
 #deletebtn:hover {
     border: 2px;
-    background-color: #aa1f7a;
+    background-color: #3d1faa;
 }
 
 #delete img{
@@ -105,4 +98,23 @@ body {
 }
 
 
+#todolist{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width:50% ;
+    justify-content: center;
+    align-items: center;
+}
 
+#tasklist   {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border: 2px solid #520437;
+    
+}
