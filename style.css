@@ -35,6 +35,16 @@ body {
     border-radius: 30px;
 
 }
+#taskndate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 20%;
+
+    
+}
+
 #task{
     border-radius: 20px;
     border: 2px solid rgb(3, 24, 94);
@@ -49,7 +59,7 @@ body {
 #addtask {
     border-radius: 20px;
     padding: 10px;
-    background-color: rgb(23, 165, 201);
+    background-color: rgb(191, 216, 223);
 }
 
 
@@ -123,3 +133,123 @@ img:hover {
     border: 2px solid #520437;
     
 }
+
+/* Tablets and under */
+@media (max-width:768px) {
+    .txt {
+        width: 3rem;
+        height: 2rem;
+        margin: 1px;
+        padding: 1px;
+    }
+    #nametask, #datetask {
+        line-height: 2px;
+    }
+    .panel {
+        border-radius: 20px;
+        padding: 5px;
+        background-color: rgb(206, 172, 238);
+        line-height: 3px;
+        
+    }
+    .todo{
+        width: 15rem;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        background-color: plum;
+        border: 5px solid rgb(3, 24, 94);
+        border-radius: 30px;
+    
+    }
+    #title{
+        font-size: medium;
+        margin: 5px;
+    }
+    #what {
+        display: none;
+    }
+    #task{
+        border-radius: 20px;
+        width: 70%;
+        border: 2px solid rgb(3, 24, 94);
+    
+    }
+    #date{
+        width: 70%;
+        border-radius: 20px;
+        border: 2px solid rgb(3, 24, 94);
+    }
+    
+    
+    #addtask {
+        border-radius: 20px;
+        line-height: 7px;
+        margin: 0;
+        padding: 3px;
+        background-color: rgb(165, 190, 196);
+    }
+    #remind{
+        display: none;
+    }
+    #lremind{
+        display: none;
+    }
+    #tasklist   {
+        align-items: center;
+        display: flex;
+        height: 1.5rem;
+        width: 100
+    }
+
+        #tasklist h3   {
+            align-items: center;
+            display: flex;
+            line-height: 2px;
+        }
+    
+}
+
+      /* Mobile */
+  @media (max-width:500px) {
+      .gbox  {
+          width: 14em;
+          height: 20em;
+      }
+  
+      .games{
+          display: grid;
+          grid-template-columns: 1fr ;
+          justify-items: center;
+          align-items: center;
+      
+      }
+  
+      .footlist{
+          display: grid;
+          grid-template-columns:1fr  ;
+          width: fit-content;
+      }
+  
+      #navlogo img {
+          width: 5em;
+          height: 1.5em;
+       }
+  
+       #nav{
+          width: 10em;
+       }
+  
+       #nav a{
+          font-size: 0.7em ;
+  
+       }
+       .list{
+          display: grid;
+       }
+    
+  }
+  
+  

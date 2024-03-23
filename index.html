@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <div class="todo">
-            <h1>Task Tracker</h1>
-            <h3>What can we do today?</h3>
+            <h1 id="title">Task Tracker</h1>
+            <h3 id="what">What can we do today?</h3>
             <button class="panel">Hide input Panel</button>
             <div id="taskndate" class="show" >
                 <label for="task">Task</label>
@@ -18,7 +18,7 @@
                 <label for="date">Date</label>
                 <input type="text" id="date">
                 <input type="checkbox" name="reminder" id="remind">
-                <label for="remind">Reminder</label>
+                <label for="remind" id="lremind">Reminder</label>
             </div>
            <input type="button" value="Add Task" id="addtask">
             <ul id="todolist">
