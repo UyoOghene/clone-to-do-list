@@ -54,14 +54,11 @@ function delTask(e){
     saveData();
 }
 
-
 function addTask(){
-
     if(inputTask.value === ''){
         alert('write something');
     }
     else {
-        console.log(inputTask.value);
         let node = document.createElement('div');
         node.classList.add("tasklist");
         node.setAttribute('id','tasklist' );
@@ -70,17 +67,17 @@ function addTask(){
         node.appendChild(node2);
         let node3 = document.createElement('h3');
         node3.setAttribute("id", "nametask");
-        node3.innerHTML = inputTask.value;
+        node3.innerText = inputTask.value;
         node2.appendChild(node3);
         let node4 = document.createElement('p');
         node4.setAttribute("id", "datetask");
-        node4.innerHTML = inputDate.value;
+        node4.innerText = inputDate.value;
         node2.appendChild(node4);
         let node5 = document.createElement("IMG");
         node5.setAttribute("src", "delete.png");
         // let node5 = document.createElement('button');
         node5.setAttribute("id", "deletebtn" );
-        node5.innerHTML = 'delete';
+        node5.innerText = 'delete';
         node.appendChild(node5);
         toDo.appendChild(toDolist); 
         toDolist.appendChild(node);
@@ -92,6 +89,11 @@ function addTask(){
     } 
 }
 
+function saveData(){
+    localStorage.setItem('list', toDolist.innerHTML);
+}
+
+function showTask(){
+    toDolist.innerHTML = localStorage.getItem('list');  
+}
 showTask();
-
-
