@@ -8,11 +8,9 @@ const datetask = document.getElementById('datetask');
 const toDo = document.querySelector('.todo');
 const toDolist = document.querySelector('#todolist');
 
-
-console.log((toDolist));
 addtask.addEventListener('click', addTask);
-
 inputPanel.addEventListener('click', hidePanel);
+toDolist.addEventListener('click', delTask);
 
 function hidePanel(){
     taskNdate.classList.toggle('hide');
@@ -24,34 +22,18 @@ function hidePanel(){
     }
 } 
 
-function showTask(){
-    toDolist.innerHTML = localStorage.getItem('list');  
-    // let loc = localStorage.getItem('list');
-    console.log(toDolist);
-}
-
- 
-function saveData(){
-    localStorage.setItem('list', toDolist.innerHTML);
-}
-
 function delTask(e){
-    console.log('deletefunction');
-    // const tlist = document.querySelector('.tasklist');
-    // tlist.remove();
-    e.target.parentElement.remove();
-
+    if(e.target.tagName === "BUTTON"){
+        e.target.parentElement.remove();
+    }
     saveData();
 }
 
-
 function addTask(){
-
     if(inputTask.value === ''){
         alert('write somehing');
     }
     else {
-        console.log(inputTask.value);
         let node = document.createElement('div');
         node.classList.add("tasklist");
         node.setAttribute('id','tasklist' );
@@ -60,27 +42,29 @@ function addTask(){
         node.appendChild(node2);
         let node3 = document.createElement('h3');
         node3.setAttribute("id", "nametask");
-        node3.innerHTML = inputTask.value;
+        node3.innerText = inputTask.value;
         node2.appendChild(node3);
         let node4 = document.createElement('p');
         node4.setAttribute("id", "datetask");
-        node4.innerHTML = inputDate.value;
+        node4.innerText = inputDate.value;
         node2.appendChild(node4);
         let node5 = document.createElement('button');
         node5.setAttribute("id", "deletebtn" );
-        node5.innerHTML = 'delete';
+        node5.innerText = 'delete';
         node.appendChild(node5);
         toDo.appendChild(toDolist); 
         toDolist.appendChild(node);
-        node5.addEventListener('click', delTask);
-
         inputTask.value ='';
         inputDate.value ='';
         saveData();
-
     }  
 }
 
+function saveData(){
+    localStorage.setItem('list', toDolist.innerHTML);
+}
+
+function showTask(){
+    toDolist.innerHTML = localStorage.getItem('list');  
+}
 showTask();
-
-
