@@ -9,10 +9,19 @@ const toDo = document.querySelector('.todo');
 const toDolist = document.querySelector('#todolist');
 
 
-console.log((toDolist));
 addtask.addEventListener('click', addTask);
-
 inputPanel.addEventListener('click', hidePanel);
+toDolist.addEventListener('click', delTask);
+
+
+inputTask.addEventListener('keypress',function(event) {
+    if (event.key === "Enter" ){
+        console.log('eee');
+        addTask();
+    } 
+      });
+
+
 
 function hidePanel(){
     taskNdate.classList.toggle('hide');
@@ -26,8 +35,8 @@ function hidePanel(){
 
 function showTask(){
     toDolist.innerHTML = localStorage.getItem('list');  
-    // let loc = localStorage.getItem('list');
     console.log(toDolist);
+    
 }
 
  
@@ -37,9 +46,10 @@ function saveData(){
 
 function delTask(e){
     console.log('deletefunction');
-    // const tlist = document.querySelector('.tasklist');
-    // tlist.remove();
-    e.target.parentElement.remove();
+    if(e.target.tagName === 'IMG'){
+    // if(e.target.tagName === 'BUTTON'){
+        e.target.parentElement.remove();
+    }
 
     saveData();
 }
@@ -48,7 +58,7 @@ function delTask(e){
 function addTask(){
 
     if(inputTask.value === ''){
-        alert('write somehing');
+        alert('write something');
     }
     else {
         console.log(inputTask.value);
@@ -66,19 +76,20 @@ function addTask(){
         node4.setAttribute("id", "datetask");
         node4.innerHTML = inputDate.value;
         node2.appendChild(node4);
-        let node5 = document.createElement('button');
+        let node5 = document.createElement("IMG");
+        node5.setAttribute("src", "delete.png");
+        // let node5 = document.createElement('button');
         node5.setAttribute("id", "deletebtn" );
         node5.innerHTML = 'delete';
         node.appendChild(node5);
         toDo.appendChild(toDolist); 
         toDolist.appendChild(node);
-        node5.addEventListener('click', delTask);
 
         inputTask.value ='';
         inputDate.value ='';
         saveData();
 
-    }  
+    } 
 }
 
 showTask();

@@ -70,21 +70,26 @@ body {
 #nametask, #datetask {
     line-height: 2px;
 }
-#deletebtn {
+/* #deletebtn {
     border-radius: 10px;
     border: none;
     cursor: pointer;
     height: 100%;
-}
+} */
 
-#deletebtn:hover {
+/* #deletebtn:hover {
     border: 2px;
     background-color: #3d1faa;
+} */
+
+img {
+    height: 30%;
+    width: 10%;
 }
 
-#delete img{
-    height: 10px;
-    width: 10px;
+img:hover {
+    height: 50%;
+    width: 20%;
 }
 
 
