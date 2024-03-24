@@ -21,6 +21,18 @@ inputTask.addEventListener('keypress',function(event) {
     } 
       });
 
+inputDate.addEventListener('keypress',function(event) {
+    if (event.key === "Enter" ){
+        console.log('date');
+        addTask();
+    } else if(inputTask.value !== ''){
+        comsole.  
+   }
+   elhse{
+    aler y
+   }
+      });
+
 
 
 function hidePanel(){
