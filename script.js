@@ -13,6 +13,16 @@ addtask.addEventListener('click', addTask);
 inputPanel.addEventListener('click', hidePanel);
 toDolist.addEventListener('click', delTask);
 
+function hidePanel(){
+    console.log('ddd')
+    taskNdate.classList.toggle('hide');
+    if(taskNdate.classList.contains('hide')){
+        inputPanel.innerHTML = 'show input panel';
+    }
+    else{
+        inputPanel.innerHTML = 'hide input panel';
+    }
+} 
 
 inputTask.addEventListener('keypress',function(event) {
     if (event.key === "Enter" ){
@@ -22,28 +32,11 @@ inputTask.addEventListener('keypress',function(event) {
       });
 
 inputDate.addEventListener('keypress',function(event) {
-    if (event.key === "Enter" ){
+    if (event.key === "Enter" && inputDate.value !== ''){
         console.log('date');
         addTask();
-    } else if(inputTask.value !== ''){
-        comsole.  
-   }
-   elhse{
-    aler y
-   }
+    }
       });
-
-
-
-function hidePanel(){
-    taskNdate.classList.toggle('hide');
-    if(taskNdate.classList.contains('hide')){
-        inputPanel.innerHTML = 'show input panel';
-    }
-    else{
-        inputPanel.innerHTML = 'hide input panel';
-    }
-} 
 
 function showTask(){
     toDolist.innerHTML = localStorage.getItem('list');  
@@ -59,16 +52,14 @@ function saveData(){
 function delTask(e){
     console.log('deletefunction');
     if(e.target.tagName === 'IMG'){
-    // if(e.target.tagName === 'BUTTON'){
         e.target.parentElement.remove();
     }
-
     saveData();
 }
 
 function addTask(){
     if(inputTask.value === ''){
-        alert('write something');
+        alert('Add a Task');
     }
     else {
         let node = document.createElement('div');
