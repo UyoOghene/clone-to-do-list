@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -18,7 +19,8 @@ body {
 .panel {
     border-radius: 20px;
     padding: 10px;
-    background-color: blueviolet;  
+    background-color: blueviolet;
+    
 }
 
 
@@ -27,12 +29,11 @@ body {
     height: 35rem;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items: center;
     background-color: plum;
     border: 5px solid rgb(3, 24, 94);
     border-radius: 30px;
-
 }
 #taskndate {
     display: flex;
@@ -40,7 +41,8 @@ body {
     align-items: center;
     width: 70%;
     height: 20%;
- 
+
+    
 }
 
 #task{
@@ -56,19 +58,11 @@ body {
 
 #addtask {
     border-radius: 20px;
-    padding: 15px;
+    padding: 10px;
     background-color: rgb(191, 216, 223);
 }
 
 
-/* #tlist {
-    display: flex;
-    justify-content: space-between;
-    height: fit-content;
-    background-color: rgb(6, 62, 110);
-    border-radius: 10px;
-    width: 15rem;
-} */
 .txt {
     width: 5rem;
     height: 3rem;
@@ -78,17 +72,6 @@ body {
 #nametask, #datetask {
     line-height: 2px;
 }
-/* #deletebtn {
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    height: 100%;
-} */
-
-/* #deletebtn:hover {
-    border: 2px;
-    background-color: #3d1faa;
-} */
 
 img {
     height: 30%;
@@ -98,7 +81,6 @@ img {
 img:hover {
     height: 50%;
     width: 20%;
-    cursor: pointer;
 }
 
 
@@ -119,14 +101,12 @@ img:hover {
     width:50% ;
     justify-content: center;
     align-items: center;
-    position: relative;
-
 }
 
 #tasklist   {
     align-items: center;
     display: flex;
-    height: 3rem;
+    height: 100%;
     width: 100%;
     justify-content: space-between;
     background-color: antiquewhite;
@@ -136,30 +116,19 @@ img:hover {
 }
 
 /* Tablets and under */
-
 @media (max-width:768px) {
     .txt {
-        /* flex-direction: column; */
-        width: 70%;
-        height: 1.5rem;
-        padding-bottom: 20px;
-
-    }
-    #taskndate {
-        position: relative;
-        margin-top: 0;
-        top: -40px;
+        width: 3rem;
+        height: 2rem;
+        margin: 1px;
+        padding: 1px;
     }
     #nametask, #datetask {
-        line-height: 1px;
-        font-size: 15px;
-        font-weight: bolder;
+        align-items: center;
+        display: flex;  
+        font-size: 10px;
     }
-
     .panel {
-        position: relative;
-        margin-top: 0;
-        top: -20px;
         border-radius: 20px;
         padding: 5px;
         background-color: rgb(206, 172, 238);
@@ -187,23 +156,23 @@ img:hover {
     }
     #task{
         border-radius: 20px;
+        width: 70%;
+        border: 2px solid rgb(3, 24, 94);
     
     }
     #date{
         width: 70%;
+        border-radius: 20px;
+        border: 2px solid rgb(3, 24, 94);
     }
     
-
+    
     #addtask {
         border-radius: 20px;
         line-height: 7px;
         margin: 0;
         padding: 3px;
-        background-color: rgb(188, 183, 233);
-        position: relative;
-        margin-top: 0;
-        top: -60px;
-
+        background-color: rgb(165, 190, 196);
     }
     #remind{
         display: none;
@@ -212,25 +181,14 @@ img:hover {
         display: none;
     }
     #tasklist   {
-        display: flex;
-        flex-direction: row;
-        height: 2.5rem;
-        width: 10rem;
-    }
-    #todolist {
-        position: relative;
-        margin-top: 0;
-        top: -80px;
+            display: flex;
+            flex-direction: row;
+            height: 2rem;
+            width: 10rem;
+            }
 
-    }
-
+    
 }
 
       /* Mobile */
-  @media (max-width:500px) {
-
-     }
-    
-  
-  
   
